@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import hackerPic from '../public/hacker.png';
+import { UserContext } from '../lib/context';
 
 // Navbar, visible on all pages
 export default function Navbar() {
-    // Will be hooked up to Firebase soon
-    const user = null;
-    const username = null;
+    // Hook into the provided context, will be updated when dependent components are re-rendered
+    const { user, username } = useContext(UserContext);
 
     return (
         <nav className='navbar'>
