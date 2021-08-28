@@ -1,0 +1,48 @@
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+
+import hackerPic from '../public/hacker.png';
+
+// Navbar, visible on all pages
+export default function Navbar() {
+    // Will be hooked up to Firebase soon
+    const user = null;
+    const username = null;
+
+    return (
+        <nav className='navbar'>
+            <ul>
+                {/* Home button, visible to all users */}
+                <li>
+                    <Link href='/' passHref>
+                        <button className='btn-logo'>Home</button>
+                    </Link>
+                </li>
+
+                {/* Dynamic display depending on whether the user is signed in */}
+                { username ? 
+                <>
+                    {/* Goes to 'admin' page where user can write posts */}
+                    <li className='push-left'>
+                        <Link href='/admin' passHref>
+                            <button className='btn-blue'>Write Posts</button>
+                        </Link>
+                    </li>
+                    {/* Links to user profile */}
+                    <li>
+                        <Link href={`/${username}`} passHref>
+                            <Image src={hackerPic} alt=""/>
+                        </Link>
+                    </li>
+                </> : 
+                <li> {/* User not logged in, render a sign in button */}
+                    <Link href='/enter' passHref>
+                        <button className='btn-blue'>Log In</button>
+                    </Link>
+                </li>
+                }
+            </ul>
+        </nav>
+    )
+}
