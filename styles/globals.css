@@ -234,6 +234,10 @@ input[type="file"] {
   font-size: 0.85rem;
 }
 
+.text-neutral {
+  font-weight: bold;
+}
+
 .text-danger {
   font-weight: bold;
   color: var(--color-red);
