@@ -263,6 +263,19 @@ input[type="file"] {
   flex-direction: column;
   align-content: center;
   text-align: center;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.google-image {
+  position:relative;
+  width: 200px;
+  height: 200px;
+}
+
+.post-desc {
+  margin-right: 10px;
 }
 
 .hidden { display:  none; }
