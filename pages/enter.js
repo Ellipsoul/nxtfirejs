@@ -8,6 +8,7 @@ import debounce from 'lodash.debounce';
 
 import googleIcon from '../public/google.png';
 import { UserContext } from '../lib/context';
+import Metatags from '../components/Metatags';
 
 export default function EnterPage() {
     const { user, username } = useContext(UserContext);
@@ -15,6 +16,7 @@ export default function EnterPage() {
     // Main nav bar
     return (
         <main>
+            <Metatags title="Enter Page" />
             {user ? 
                 (!username ? <UsernameForm /> :  // User signed in but no username
                 <SignOutButton />) :             // User signed in and has a username

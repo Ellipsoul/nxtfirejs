@@ -12,6 +12,7 @@ import {
 
 import PostFeed from "../components/PostFeed";
 import Loader from "../components/Loader";
+import Metatags from "../components/Metatags";
 
 /*
 Root directory containing a list of user posts
@@ -84,6 +85,9 @@ export default function Home(props) {
 
   return (
     <main>
+      <Metatags title="Home Page" />
+
+      {/* Warm welcome */}
       <h1>Welcome to the Home Page!</h1>
       <h2>Check out all the user posts here</h2>
 

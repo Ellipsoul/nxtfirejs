@@ -1,5 +1,6 @@
 import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent.js';
+import Metatags from '../../components/Metatags';
 
 import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
@@ -74,6 +75,7 @@ export default function Post(props) {
 
   return (
     <main className={styles.container}>
+      <Metatags title="User Post Page" />
       
       <section>
         <PostContent post={post}/>
@@ -81,7 +83,7 @@ export default function Post(props) {
 
       <aside className="card">
         <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
+          <strong>{post.heartCount || 0} 💙 </strong>
         </p>
       </aside>
 
