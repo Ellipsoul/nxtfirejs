@@ -290,3 +290,7 @@ input[type="file"] {
   display: flex;
   flex-direction: row;
 }
+
+.left-margin {
+  margin-left: 20px;
+}
