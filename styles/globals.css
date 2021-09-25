@@ -20,8 +20,6 @@ body {
   margin-top: 50px;
 }
 
-
-
 main {
   padding: 1rem 10vw;
 }
@@ -286,4 +284,9 @@ input[type="file"] {
 .post-content {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.buttons-404 {
+  display: flex;
+  flex-direction: row;
 }

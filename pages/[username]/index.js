@@ -12,6 +12,9 @@ export async function getServerSideProps({ query }) {
 
   const userDoc = await getUserWithUsername(username); // Retrieve user object with username from Firebase
   
+  // Activate NextJS built in 404 routing
+  if (!userDoc) { return { notFound: true }; }
+
   // JSON serialisable data
   let user = null;
   let posts = [];
