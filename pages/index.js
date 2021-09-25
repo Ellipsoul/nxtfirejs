@@ -85,7 +85,7 @@ export default function Home(props) {
 
   return (
     <main>
-      <Metatags title="Home Page" />
+      <Metatags title="NextFire - Home" />
 
       {/* Warm welcome */}
       <h1>Welcome to the Home Page!</h1>

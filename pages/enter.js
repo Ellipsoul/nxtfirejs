@@ -16,7 +16,7 @@ export default function EnterPage() {
     // Main nav bar
     return (
         <main>
-            <Metatags title="Enter Page" />
+            <Metatags title="NextFire - Sign In/Out" />
             {user ? 
                 (!username ? <UsernameForm /> :  // User signed in but no username
                 <SignOutButton />) :             // User signed in and has a username

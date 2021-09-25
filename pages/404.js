@@ -8,7 +8,7 @@ import Metatags from '../components/Metatags';
 export default function Custom404() {
   return (
     <main>
-      <Metatags title="Error Page" />
+      <Metatags title="NextFire - 404 Error" />
 
       <h1>404 Error</h1>
       <h2>Hmm - That page does not seem to exist...</h2>

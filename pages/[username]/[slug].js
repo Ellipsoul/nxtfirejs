@@ -75,7 +75,7 @@ export default function Post(props) {
 
   return (
     <main className={styles.container}>
-      <Metatags title="User Post Page" />
+      <Metatags title={`NextFire - ${post.title}`} />
       
       <section>
         <PostContent post={post}/>

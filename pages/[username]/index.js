@@ -46,7 +46,7 @@ export async function getServerSideProps({ query }) {
 export default function UserProfilePage( {user, posts} ) {
   return (
     <main>
-      <Metatags title="User Profile Page" />
+      <Metatags title={`NextFire - @${user.username}`} />
 
       <UserProfile user={user} />
       <PostFeed posts={posts} />
