@@ -84,6 +84,9 @@ export default function Home(props) {
 
   return (
     <main>
+      <h1>Welcome to the Home Page!</h1>
+      <h2>Check out all the user posts here</h2>
+
       {/* Post Feed of all posts */}
       <PostFeed posts={posts} />
       {/* Option to load more posts if there are more */}
