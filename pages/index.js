@@ -20,6 +20,7 @@ Server-side render 10 most recent posts, then request client side paginated quer
 
 const LIMIT = 1; // Number of posts for each batch
 
+// Just like the username page, render the home page on the server (SSR)
 export async function getServerSideProps(context) {
   // Grab all published posts from all users
   const allPostsCollection = collectionGroup(firestore, "posts");

@@ -8,7 +8,6 @@ import { getUserWithUsername, postToJSON } from "../../lib/firebase";
 
 // Asynchrons call to pre-render user data and posts on the server
 export async function getServerSideProps({ query }) {
-  // debugger;
   const { username } = query;
 
   const userDoc = await getUserWithUsername(username); // Retrieve user object with username from Firebase
