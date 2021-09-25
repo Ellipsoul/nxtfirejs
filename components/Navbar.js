@@ -16,7 +16,7 @@ export default function Navbar() {
         {/* Home button, visible to all users */}
         <li>
           <Link href="/" passHref>
-            <button className="btn-logo">NextFire</button>
+            <button className="btn-logo">NextFire 🔥</button>
           </Link>
         </li>
 

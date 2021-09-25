@@ -19,7 +19,7 @@ Root directory containing a list of user posts
 Server-side render 10 most recent posts, then request client side paginated query for 5 new posts at a time
 */
 
-const LIMIT = 1; // Number of posts for each batch
+const LIMIT = 2; // Number of posts for each batch
 
 // Just like the username page, render the home page on the server (SSR)
 export async function getServerSideProps(context) {
@@ -85,10 +85,10 @@ export default function Home(props) {
 
   return (
     <main>
-      <Metatags title="NextFire - Home" />
+      <Metatags title="NextFire - &#127968;" />
 
       {/* Warm welcome */}
-      <h1>Welcome to the Home Page!</h1>
+      <h1>Welcome to the Home Page! 🏠</h1>
       <h2>Check out all the user posts here</h2>
 
       {/* Post Feed of all posts */}
