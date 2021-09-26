@@ -40,7 +40,6 @@ function PostList() {
   // Run this only once when the component loads, ensures the posts are actually retrieved
   useEffect(() => {
     // Grab all the posts authored by the user with a firebase query
-    // const userPosts = collection(doc(collection(firestore, 'users'), auth.currentUser.uid), 'posts');
     const userPosts = collection(firestore, 'users', auth.currentUser.uid, 'posts');
     const q = query(userPosts, orderBy('createdAt'))
 
@@ -82,7 +81,7 @@ function CreateNewPost() {
 
       // Grab a document reference using the slug (since it doesn't exist, it creates a new post)
       const uid = auth.currentUser.uid;
-      const ref = doc(collection(doc(collection(firestore, 'users'), uid), 'posts'), slug);
+      const ref = doc(firestore, 'users', uid, 'posts', slug);
 
       // Data for the post, with appropriate default data to be edited afterwards
       const data = {
@@ -90,7 +89,7 @@ function CreateNewPost() {
         slug,
         uid,
         username,
-        published: false,
+        published: true,
         content: 'Hello World!',
         createdAt: timestamp,
         updatedAt: timestamp,
