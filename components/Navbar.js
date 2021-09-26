@@ -40,7 +40,7 @@ export default function Navbar() {
               <Link href={`/${username}`} passHref>
                 <Image
                   src={user ? user.photoURL : "/public/hacker.png"}
-                  alt=""
+                  alt="Profile Icon"
                   width={100}
                   height={100}
                 />
