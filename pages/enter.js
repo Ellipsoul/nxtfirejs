@@ -6,7 +6,7 @@ import { doc, getDoc, writeBatch } from "firebase/firestore";
 
 import debounce from 'lodash.debounce';
 
-import googleIcon from '../public/google.png';
+// import googleIcon from '../public/google.png';
 import { UserContext } from '../lib/context.js';
 import Metatags from '../components/Metatags.js';
 
@@ -36,7 +36,7 @@ function SignInButton() {
     // Simple button for signing in with Google auth
     return (
         <button className="btn-google" onClick={signInWithGoogle}>
-            <Image src={googleIcon} alt=""></Image>
+            <Image src="/public/google.png" alt=""></Image>
             <span className="left-margin">Sign In with Google</span>
         </button>
     );

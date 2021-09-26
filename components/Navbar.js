@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import hackerPic from "../public/hacker.png";
+// import hackerPic from "../public/hacker.png";
 import { UserContext } from "../lib/context.js";
 
 // Navbar, visible on all pages
@@ -39,7 +39,7 @@ export default function Navbar() {
             <li>
               <Link href={`/${username}`} passHref>
                 <Image
-                  src={user ? user.photoURL : hackerPic}
+                  src={user ? user.photoURL : "/public/hacker.png"}
                   alt=""
                   width={100}
                   height={100}
