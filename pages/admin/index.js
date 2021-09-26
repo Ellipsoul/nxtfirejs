@@ -6,6 +6,7 @@ import { UserContext } from '../../lib/context';
 import { firestore, auth, timestamp } from '../../lib/firebase';
 
 import { useEffect, useState, useContext } from 'react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { collection, doc, query, getDocs, setDoc, orderBy } from '@firebase/firestore';
 
@@ -17,6 +18,9 @@ import toast from 'react-hot-toast';
 export default function AdminPostsPage(props) {
     return (
         <main>
+            <Head>
+              <title>NexFire - Admin &#128272;</title>
+            </Head>
             {/* AuthCheck component protects all admin features from unauthenticated users */}
             <AuthCheck>
                 {/* Option to create a new post */}
@@ -99,8 +103,8 @@ function CreateNewPost() {
 
   return (
     <>
-      <h1>Create a New Post!</h1>
-      <h3>Please don&rsquo;t use the same title multiple times since the code might break, thanks 💚</h3>
+      <h1>Create a New Post! 🖋</h1>
+      <h3>Please don&rsquo;t use the same title multiple times since the code might break, thanks!</h3>
 
       <form onSubmit={createPost}>
         <input
