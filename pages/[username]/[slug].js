@@ -109,7 +109,7 @@ export default function Post(props) {
               <button>💗 Sign Up</button>
             </Link>
           }>
-          <HeartButton postRef={postsRef}></HeartButton>
+          {/* <HeartButton postRef={postsRef}></HeartButton> */}
         </AuthCheck>
 
       </aside>
