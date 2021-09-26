@@ -37,12 +37,13 @@ export default function AdminPostsPage(props) {
 function PostList() {
   const [posts, setPosts] = useState([])
 
-  // Grab all the posts authored by the user with a firebase query
-  const userPosts = collection(doc(collection(firestore, 'users'), auth.currentUser.uid), 'posts');
-  const q = query(userPosts, orderBy('createdAt'))
-
   // Run this only once when the component loads, ensures the posts are actually retrieved
   useEffect(() => {
+    // Grab all the posts authored by the user with a firebase query
+    // const userPosts = collection(doc(collection(firestore, 'users'), auth.currentUser.uid), 'posts');
+    const userPosts = collection(firestore, 'users', auth.currentUser.uid, 'posts');
+    const q = query(userPosts, orderBy('createdAt'))
+
     let ayncGetDocs = async q => getDocs(q);  // Define the async function the retrieves the post docs
     const p = []                              // Temporary array that stores the posts
     
@@ -52,7 +53,7 @@ function PostList() {
       postResults.forEach(post => p.push(post.data()));  // Append to the temporary posts variable 
       setPosts(p);                                       // Set the final posts array once
     }, 
-  [])});
+  )}, []);
 
   return (
     <>
