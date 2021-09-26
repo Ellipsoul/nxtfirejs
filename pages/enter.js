@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import React, { useContext, useCallback, useEffect, useState } from 'react'
-import { auth, googleAuthProvider, firestore } from '../lib/firebase';
+import { auth, googleAuthProvider, firestore } from '../lib/firebase.js';
 import { signInWithPopup } from 'firebase/auth';
 import { doc, getDoc, writeBatch } from "firebase/firestore";
 
 import debounce from 'lodash.debounce';
 
 import googleIcon from '../public/google.png';
-import { UserContext } from '../lib/context';
-import Metatags from '../components/Metatags';
+import { UserContext } from '../lib/context.js';
+import Metatags from '../components/Metatags.js';
 
 export default function EnterPage() {
     const { user, username } = useContext(UserContext);

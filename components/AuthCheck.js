@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useContext } from "react";
-import { UserContext } from "../lib/context";
+import { UserContext } from "../lib/context.js";
 
 // Simple check to see if a user is authenticated
 // Component's children only shown to logged-in users

@@ -1,6 +1,6 @@
-import { firestore, auth } from '../lib/firebase';
+import { firestore, auth } from '../lib/firebase.js';
 
-import { doc, getDoc, writeBatch, increment } from '@firebase/firestore';
+import { doc, getDoc, writeBatch, increment } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 // Allow users to heart a post
