@@ -2,6 +2,8 @@ import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent.js';
 import Metatags from '../../components/Metatags';
 import { UserContext } from '../../lib/context';
+import AuthCheck from '../../components/AuthCheck';
+import HeartButton from '../../components/HeartButton';
 
 import Link from 'next/link';
 import { useEffect, useState, useContext } from 'react';
@@ -67,15 +69,14 @@ export async function getStaticPaths() {
 export default function Post(props) {
 
   const [post, setPost] = useState(props.post);   // Initialise post state to use SSRd post (may be stale)
+  const postsRef = doc(firestore, props.path);  // Path to document
 
   // Run this to grab real time document data if possible
   useEffect(() => {
-    const postsRef = doc(firestore, props.path);  // Path to document
     let asyncGetDoc = async q => getDoc(q);       // Asynchronously grab document
-    
     // Execute the document read and update the post to real time if possible
     asyncGetDoc(postsRef).then( doc => setPost(doc.data()) )
-  }, [props.path])
+  }, [props.path, postsRef])
 
   // Grab the current user for potential admin privileges
   const { user: currentUser } = useContext(UserContext);
@@ -100,6 +101,16 @@ export default function Post(props) {
             <button className="btn-blue">Edit Post</button>
           </Link>
         )}
+
+        {/* Heart button, and give a not logged in user a chance to return to login */}
+        <AuthCheck
+          fallback={
+            <Link href="/enter" passHref>
+              <button>💗 Sign Up</button>
+            </Link>
+          }>
+          <HeartButton postRef={postsRef}></HeartButton>
+        </AuthCheck>
 
       </aside>
 
