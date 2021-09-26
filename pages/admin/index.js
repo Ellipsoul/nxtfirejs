@@ -41,7 +41,7 @@ function PostList() {
   useEffect(() => {
     // Grab all the posts authored by the user with a firebase query
     const userPosts = collection(firestore, 'users', auth.currentUser.uid, 'posts');
-    const q = query(userPosts, orderBy('createdAt'))
+    const q = query(userPosts, orderBy('createdAt', 'desc'));
 
     let asyncGetDocs = async q => getDocs(q);  // Define the async function the retrieves the post docs
     const p = []                              // Temporary array that stores the posts

@@ -1,8 +1,10 @@
 import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent.js';
 import Metatags from '../../components/Metatags';
+import { UserContext } from '../../lib/context';
 
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useEffect, useState, useContext } from 'react';
 import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
 import { collection, getDoc, collectionGroup, getDocs, doc } from '@firebase/firestore';
 
@@ -62,7 +64,6 @@ export async function getStaticPaths() {
 }
 
 
-
 export default function Post(props) {
 
   const [post, setPost] = useState(props.post);   // Initialise post state to use SSRd post (may be stale)
@@ -76,6 +77,9 @@ export default function Post(props) {
     asyncGetDoc(postsRef).then( doc => setPost(doc.data()) )
   }, [props.path])
 
+  // Grab the current user for potential admin privileges
+  const { user: currentUser } = useContext(UserContext);
+
   return (
     <main className={styles.container}>
       <Metatags title={`NextFire - ${post.title}`} />
@@ -84,12 +88,22 @@ export default function Post(props) {
         <PostContent post={post}/>
       </section>
 
+      {/* Side display containing heart count, heart button and potential options for admin */}
       <aside className="card">
         <p>
           <strong>{post.heartCount || 0} 💙 </strong>
         </p>
+
+        {/* Post owner can edit post from here */}
+        {currentUser?.uid === post.uid && (
+          <Link href={`/admin/${post.slug}`} passHref>
+            <button className="btn-blue">Edit Post</button>
+          </Link>
+        )}
+
       </aside>
 
+      
     </main>
   )
 }

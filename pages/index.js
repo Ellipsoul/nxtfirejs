@@ -19,7 +19,7 @@ Root directory containing a list of user posts
 Server-side render 10 most recent posts, then request client side paginated query for 5 new posts at a time
 */
 
-const LIMIT = 2; // Number of posts for each batch
+const LIMIT = 5; // Number of posts for each batch
 
 // Just like the username page, render the home page on the server (SSR)
 export async function getServerSideProps(context) {
