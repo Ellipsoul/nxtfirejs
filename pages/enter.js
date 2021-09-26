@@ -36,7 +36,7 @@ function SignInButton() {
     // Simple button for signing in with Google auth
     return (
         <button className="btn-google" onClick={signInWithGoogle}>
-            <Image src="/public/google.png" alt="Google Icon" layout="fill"></Image>
+            {/* <Image src="/public/google.png" alt="Google Icon" layout="fill"></Image> */}
             <span className="left-margin">Sign In with Google</span>
         </button>
     );

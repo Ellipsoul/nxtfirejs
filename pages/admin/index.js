@@ -19,7 +19,7 @@ export default function AdminPostsPage(props) {
     return (
         <main>
             <Head>
-              <title>NexFire - Admin &#128272;</title>
+              <title>NextFire - Admin &#128272;</title>
             </Head>
             {/* AuthCheck component protects all admin features from unauthenticated users */}
             <AuthCheck>
