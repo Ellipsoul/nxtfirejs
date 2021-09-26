@@ -2,8 +2,8 @@ import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent.js';
 import Metatags from '../../components/Metatags';
 
+import { useEffect, useState } from 'react';
 import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
-import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { collection, getDoc, collectionGroup, getDocs, doc } from '@firebase/firestore';
 
 /*
@@ -65,13 +65,16 @@ export async function getStaticPaths() {
 
 export default function Post(props) {
 
-  // TODO: React firebase hooks currently not supporting Firebase v9. Only SSR posts available for now
-  // const postsRef = doc(firestore, props.path);
-  // const [realtimePost] = useDocumentData(postsRef);
+  const [post, setPost] = useState(props.post);   // Initialise post state to use SSRd post (may be stale)
 
-  // const post = realtimePost || props.post
-
-  const post = props.post  // Temporarily just render the posts that have been SSRd
+  // Run this to grab real time document data if possible
+  useEffect(() => {
+    const postsRef = doc(firestore, props.path);  // Path to document
+    let asyncGetDoc = async q => getDoc(q);       // Asynchronously grab document
+    
+    // Execute the document read and update the post to real time if possible
+    asyncGetDoc(postsRef).then( doc => setPost(doc.data()) )
+  }, [props.path])
 
   return (
     <main className={styles.container}>

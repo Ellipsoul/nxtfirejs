@@ -43,11 +43,11 @@ function PostList() {
     const userPosts = collection(firestore, 'users', auth.currentUser.uid, 'posts');
     const q = query(userPosts, orderBy('createdAt'))
 
-    let ayncGetDocs = async q => getDocs(q);  // Define the async function the retrieves the post docs
+    let asyncGetDocs = async q => getDocs(q);  // Define the async function the retrieves the post docs
     const p = []                              // Temporary array that stores the posts
     
     // Execute the asynchronous function with the query
-    ayncGetDocs(q).then((res) => {
+    asyncGetDocs(q).then((res) => {
       const postResults = res.docs;                      // Grab posts from the docs key/attribute
       postResults.forEach(post => p.push(post.data()));  // Append to the temporary posts variable 
       setPosts(p);                                       // Set the final posts array once
