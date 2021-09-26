@@ -103,14 +103,14 @@ export default function Post(props) {
         )}
 
         {/* Heart button, and give a not logged in user a chance to return to login */}
-        <AuthCheck
+        {/* <AuthCheck
           fallback={
             <Link href="/enter" passHref>
               <button>💗 Sign Up</button>
             </Link>
           }>
-          {/* <HeartButton postRef={postsRef}></HeartButton> */}
-        </AuthCheck>
+          <HeartButton postRef={postsRef}></HeartButton>
+        </AuthCheck> */}
 
       </aside>
 
