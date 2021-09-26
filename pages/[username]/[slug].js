@@ -7,7 +7,7 @@ import HeartButton from '../../components/HeartButton.js';
 
 import Link from 'next/link';
 import { useEffect, useState, useContext } from 'react';
-import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
+import { firestore, getUserWithUsername, postToJSON } from '@/lib/firebase';
 import { collection, getDoc, collectionGroup, getDocs, doc } from '@firebase/firestore';
 
 /*
