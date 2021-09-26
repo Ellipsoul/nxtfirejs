@@ -1,5 +1,5 @@
 import Link from 'next/link';
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/react-markdown.min';
 
 // UI component for main post content
 export default function PostContent({ post }) {
@@ -17,7 +17,7 @@ export default function PostContent({ post }) {
       </span>
 
       {/* Post content, rendered to support markdown */}
-      <div className="post-content">{post?.content}</div>
+      <ReactMarkdown className="post-content">{post?.content}</ReactMarkdown>
     </div>
   );
 }
