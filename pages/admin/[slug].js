@@ -6,6 +6,7 @@ import ImageUploader from '../../components/ImageUploader.js';
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import { useForm, useFormState } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
@@ -18,10 +19,17 @@ import toast from 'react-hot-toast';
 // Post owner can preview and edit posts from this page
 export default function AdminPostEdit(props) {
   return (
-    // Once again, nest admin functionality inside an authCheck
-    <AuthCheck>
-      <PostManager />
-    </AuthCheck>
+    <>
+      <Head>
+        <title>NextFire - Edit Post</title>
+      </Head>
+
+      {/* Once again, nest admin functionality inside an authCheck */}
+      <AuthCheck>
+        <PostManager />
+      </AuthCheck>
+    </>
+    
   );
 }
 
