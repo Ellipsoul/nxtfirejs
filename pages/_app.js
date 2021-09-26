@@ -1,10 +1,10 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 
-import Navbar from '@components/navbar';
+import Navbar from '@/components/navbar';
 import { Toaster } from 'react-hot-toast';
-import { UserContext } from '../lib/context';
+import { UserContext } from '@/lib/context';
 
-import { useUserData } from '../lib/hooks';
+import { useUserData } from '@/lib/hooks';
 
 // Wrapper surrounding every page of the app
 

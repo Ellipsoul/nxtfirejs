@@ -1,9 +1,9 @@
-import styles from '../../styles/Admin.module.css';
-import AuthCheck from '../../components/AuthCheck';
-import PostFeed from '../../components/PostFeed';
-import { UserContext } from '../../lib/context';
+import styles from '@/styles/Admin.module.css';
+import AuthCheck from '@/components/AuthCheck';
+import PostFeed from '@/components/PostFeed';
+import { UserContext } from '@/lib/context';
 
-import { firestore, auth, timestamp } from '../../lib/firebase';
+import { firestore, auth, timestamp } from '@/lib/firebase';
 
 import { useEffect, useState, useContext } from 'react';
 import Head from 'next/head';

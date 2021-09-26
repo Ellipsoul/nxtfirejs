@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import hackerPic from "../public/hacker.png";
-import { UserContext } from "../lib/context";
+import hackerPic from "@/public/hacker.png";
+import { UserContext } from "@/lib/context";
 
 // Navbar, visible on all pages
 export default function Navbar() {

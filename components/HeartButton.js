@@ -1,4 +1,4 @@
-import { firestore, auth } from '../lib/firebase';
+import { firestore, auth } from '@/lib/firebase';
 
 import { doc, getDoc, writeBatch, increment } from '@firebase/firestore';
 import { useEffect, useState } from 'react';

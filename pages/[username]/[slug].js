@@ -1,13 +1,13 @@
-import styles from '../../styles/Post.module.css';
-import PostContent from '../../components/PostContent.js';
-import Metatags from '../../components/Metatags';
-import { UserContext } from '../../lib/context';
-import AuthCheck from '../../components/AuthCheck';
-import HeartButton from '../../components/HeartButton';
+import styles from '@/styles/Post.module.css';
+import PostContent from '@/components/PostContent.js';
+import Metatags from '@/components/Metatags';
+import { UserContext } from '@/lib/context';
+import AuthCheck from '@/components/AuthCheck';
+import HeartButton from '@/components/HeartButton';
 
 import Link from 'next/link';
 import { useEffect, useState, useContext } from 'react';
-import { firestore, getUserWithUsername, postToJSON } from '../../lib/firebase';
+import { firestore, getUserWithUsername, postToJSON } from '@/lib/firebase';
 import { collection, getDoc, collectionGroup, getDocs, doc } from '@firebase/firestore';
 
 /*

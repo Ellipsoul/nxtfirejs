@@ -1,10 +1,10 @@
 import React from "react";
 import { collection, where, getDocs, orderBy, limit, query as firebaseQuery } from "firebase/firestore";
 
-import UserProfile from "../../components/UserProfile";
-import PostFeed from "../../components/PostFeed";
-import { getUserWithUsername, postToJSON } from "../../lib/firebase";
-import Metatags from "../../components/Metatags";
+import UserProfile from "@/components/UserProfile";
+import PostFeed from "@/components/PostFeed";
+import { getUserWithUsername, postToJSON } from "@/lib/firebase";
+import Metatags from "@/components/Metatags";
 
 // Asynchrons call to pre-render user data and posts on the server
 export async function getServerSideProps({ query }) {
