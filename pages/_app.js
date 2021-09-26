@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 
-import Navbar from '../components/navbar.js';
+import Navbar from '../components/Navbar.js';
 import { Toaster } from 'react-hot-toast';
 import { UserContext } from '../lib/context.js';
 
