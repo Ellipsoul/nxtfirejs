@@ -2,6 +2,7 @@ import styles from '../../styles/Admin.module.css';
 import AuthCheck from '../../components/AuthCheck';
 import { firestore, auth, timestamp } from '../../lib/firebase';
 import { doc, getDoc, updateDoc } from '@firebase/firestore';
+import ImageUploader from '../../components/ImageUploader';
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -105,6 +106,9 @@ function PostForm({ defaultValues, postRef, preview }) {
 
       {/* If user is editing, show some additional controls */}
       <div className={preview ? styles.hidden : styles.controls}>
+        {/* Allow users to upload images to the post! */}
+        <ImageUploader />
+
         {/* ref(register) connects this text area to the form */}
         <textarea {...register("content", {
             max: { value: 20000, message: 'content is too long' },
