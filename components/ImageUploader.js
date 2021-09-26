@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { auth, storage } from '@/lib/firebase';
+import { auth, storage } from '../lib/firebase.js';
+
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import Loader from './Loader';
+import Loader from './Loader.js';
 
 export default function ImageUploader() {
   // Track 3 different states

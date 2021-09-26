@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import toast from 'react-hot-toast'; 
 
-import Metatags from '@/components/Metatags';
+import Metatags from '../components/Metatags.js';
 
 // Custom 404 Page. Next automatically routes 404 errors to a file with this name
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { firestore, fromMillis, postToJSON } from "@/lib/firebase";
+import { firestore, fromMillis, postToJSON } from "../lib/firebase.js";
 import {
   where,
   orderBy,
@@ -10,9 +10,9 @@ import {
   startAfter,
 } from "firebase/firestore";
 
-import PostFeed from "@/components/PostFeed";
-import Loader from "@/components/Loader";
-import Metatags from "@/components/Metatags";
+import PostFeed from "../components/PostFeed.js";
+import Loader from "../components/Loader.js";
+import Metatags from "../components/Metatags.js";
 
 /*
 Root directory containing a list of user posts
