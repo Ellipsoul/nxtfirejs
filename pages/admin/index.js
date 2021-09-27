@@ -44,7 +44,7 @@ function PostList() {
     const q = query(userPosts, orderBy('createdAt', 'desc'));
 
     let asyncGetDocs = async q => getDocs(q);  // Define the async function the retrieves the post docs
-    const p = []                              // Temporary array that stores the posts
+    const p = []                               // Temporary array that stores the posts
     
     // Execute the asynchronous function with the query
     asyncGetDocs(q).then((res) => {

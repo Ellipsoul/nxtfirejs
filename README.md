@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Online Blogging Web App
 
-## Getting Started
+This project was completed for *educational purposes* following a tutorial by [Fireship](https://fireship.io/)
 
-First, run the development server:
+## Fun Technologies Learned
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [React](https://reactjs.org/)
+  - [NextJS](https://nextjs.org/) framework
+  - [Server side rendering](https://nextjs.org/docs/basic-features/pages#server-side-rendering)
+  - [Static site generation](https://nextjs.org/docs/basic-features/pages#static-generation-recommended)
+  - [Incremental static regeneration](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration)
+- [Firebase](https://firebase.google.com/) Version [9](https://firebase.google.com/docs/web/modular-upgrade)
+  - [Authentication](https://firebase.google.com/docs/auth) with Google Auth
+  - [Firestore](https://firebase.google.com/docs/firestore) real-time database
+  - [Storage](https://firebase.google.com/docs/storage)
+- [Vercel](https://vercel.com) CI/CD
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### This was fun!
+But is a project really a project if you completed it with the help of a tutorial? That's up to you :)

@@ -2,8 +2,8 @@ import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent.js';
 import Metatags from '../../components/Metatags.js';
 import { UserContext } from '../../lib/context.js';
-import AuthCheck from '../../components/AuthCheck.js';
-import HeartButton from '../../components/HeartButton.js';
+// import AuthCheck from '../../components/AuthCheck.js';
+// import HeartButton from '../../components/HeartButton.js';
 
 import Link from 'next/link';
 import { useEffect, useState, useContext } from 'react';
@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {post, path},
-    revalidate: 5000      // Tell next to regenerate page when new requests arrive, with this time interval
+    revalidate: 60000      // Tell next to regenerate page when new requests arrive, with this time interval
   };
 }
 
@@ -66,10 +66,11 @@ export async function getStaticPaths() {
 }
 
 
+// Main post view
 export default function Post(props) {
 
-  const [post, setPost] = useState(props.post);   // Initialise post state to use SSRd post (may be stale)
-  const postsRef = doc(firestore, props.path);  // Path to document
+  const [post, setPost] = useState(props.post);  // Initialise post state to use SSRd post (may be stale)
+  const postsRef = doc(firestore, props.path);   // Path to document
 
   // Run this to grab real time document data if possible
   useEffect(() => {
@@ -89,31 +90,36 @@ export default function Post(props) {
         <PostContent post={post}/>
       </section>
 
+      {/* An aside to allow for editing posts if the user owns it. Hearts functionality disabled for now */}
+      {currentUser?.uid === post.uid && (
+        <aside>
+          <Link href={`/admin/${post.slug}`} passHref>
+            <button className="btn-blue">Edit Post</button>
+          </Link>
+        </aside>
+      )}
+
       {/* Side display containing heart count, heart button and potential options for admin */}
-      <aside className="card">
+      {/* <aside className="card">
         <p>
           <strong>{post.heartCount || 0} 💙 </strong>
         </p>
 
-        {/* Post owner can edit post from here */}
         {currentUser?.uid === post.uid && (
           <Link href={`/admin/${post.slug}`} passHref>
             <button className="btn-blue">Edit Post</button>
           </Link>
         )}
 
-        {/* Heart button, and give a not logged in user a chance to return to login */}
-        {/* <AuthCheck
+        <AuthCheck
           fallback={
             <Link href="/enter" passHref>
               <button>💗 Sign Up</button>
             </Link>
           }>
           <HeartButton postRef={postsRef}></HeartButton>
-        </AuthCheck> */}
-
-      </aside>
-
+        </AuthCheck>
+      </aside> */}
       
     </main>
   )

@@ -37,7 +37,7 @@ function PostItem({ post, admin }) {
       <footer>
         <span className='post-desc'>{wordCount} words. </span>
         <span className='post-desc'>{minutesToRead} minute read</span>
-        <span className='post-desc'>💛 {post.heartCount} Hearts</span>
+        {/* <span className='post-desc'>💛 {post.heartCount} Hearts</span> */}
       </footer>
 
       {/* If admin view, show extra controls for user */}

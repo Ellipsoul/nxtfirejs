@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { useForm, useFormState } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 
 import ReactMarkdown from 'react-markdown/react-markdown.min';

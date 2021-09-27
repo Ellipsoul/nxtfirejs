@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import React, { useContext, useCallback, useEffect, useState } from 'react'
 import { auth, googleAuthProvider, firestore } from '../lib/firebase.js';
 import { signInWithPopup } from 'firebase/auth';
