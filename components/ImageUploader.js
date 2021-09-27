@@ -57,6 +57,7 @@ export default function ImageUploader() {
             {/* Only accept certain image input type */}
             <input type='file' onChange={uploadFile} accept="image/x-png,image/gif,image/jpeg" />
           </label>
+          <span>Once the image is uploaded, copy the shareable URL into your post!</span>
         </>
       )}
 

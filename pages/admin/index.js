@@ -90,7 +90,7 @@ function CreateNewPost() {
         uid,
         username,
         published: true,
-        content: '# Hello World! It appears that markdown is working :O',
+        content: '## Write something awesome here! You can even use Markdown!',
         createdAt: timestamp,
         updatedAt: timestamp,
         heartCount: 0,

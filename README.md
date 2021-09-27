@@ -1,8 +1,8 @@
 # Online Blogging Web App
 
-This project was completed for *educational purposes* following a tutorial by [Fireship](https://fireship.io/)
+This project was completed for *educational purposes* (^^) following a tutorial by [Fireship](https://fireship.io/). It is a very simple blogging platform in the style of [DEV](https://dev.to/) where users can create an account, read posts, and write/edit posts supporting markdown and image uploads.
 
-## Fun Technologies Learned
+## Technologies Learned!
 
 - [React](https://reactjs.org/)
   - [NextJS](https://nextjs.org/) framework
