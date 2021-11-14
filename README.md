@@ -2,6 +2,7 @@
 
 This project was completed for *educational purposes* (^^) following a tutorial by [Fireship](https://fireship.io/). It is a very simple blogging platform in the style of [DEV](https://dev.to/) where users can create an account, read posts, and write/edit posts supporting markdown and image uploads.
 
+Deployed [here](http://nxtfirejs.vercel.app/)
 ## Technologies Learned!
 
 - [React](https://reactjs.org/)
