@@ -1,9 +1,8 @@
-const withTM = require('next-transpile-modules')(['react-markdown']);
-const withFB = require('firebase/firestore');
+const withTM = require('next-transpile-modules')(['react-markdown', 'firebase/firestore']);
 
-module.exports = withFB(withTM({
+module.exports = withTM({
   reactStrictMode: true,
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-}));
+});
