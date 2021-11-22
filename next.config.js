@@ -1,4 +1,4 @@
-const withTM = require('next-transpile-modules')(['react-markdown', 'firebase/firestore']);
+const withTM = require('next-transpile-modules')(['react-markdown', '@firebase/firestore']);
 
 module.exports = withTM({
   reactStrictMode: true,
